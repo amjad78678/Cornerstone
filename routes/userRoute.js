@@ -43,17 +43,13 @@ userRouter.get('/userRegister', auth.isLogout, userController.loadRegister);
 userRouter.post('/userRegister', userController.postRegister);
 userRouter.get('/userSignIn', auth.isLogout, userController.loadLogin);
 userRouter.post('/userSignIn', userController.verifyLogin)
-
 userRouter.get('/authentication', auth.isLogout, userController.loadOtp);
 userRouter.post('/authentication', userController.verifyOtp);
-
-
 userRouter.get('/userLogout', auth.isLogin, userController.userLogout);
 userRouter.get('/loginWithOtp', auth.isLogout, userController.loginWithOtp)
 userRouter.post('/loginWithOtp', userController.verifyLoginWithOtp)
 userRouter.get('/productList', userController.loadProductList)
 userRouter.post('/productList', userController.loadProductList)
-
 userRouter.get('/emailVerifyAfter', auth.isLogout, userController.loadEmailVerifyAfter)
 userRouter.post('/emailVerifyAfter', userController.postEmailVerifyAfter)
 userRouter.get('/productDetail', userController.loadProductDetail)
